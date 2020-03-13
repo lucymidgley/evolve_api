@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  size: MyString
+  x_coord: MyString
+  y_coord: MyString
+  speed: MyString
+  colour: MyString
+  perception: MyString
+  energy_efficiency: MyString
+  max_energy: MyString
+  energy_level: MyString
+  max_size: MyString
+  age: MyString
+  reproductive_age: MyString
+  life_span: MyString
+  offspring_capacity: MyString
+  parent_1: MyString
+  parent_2: MyString
+  name: MyString
+  predator: MyString
+  sex: MyString
+
+two:
+  game: two
+  size: MyString
+  x_coord: MyString
+  y_coord: MyString
+  speed: MyString
+  colour: MyString
+  perception: MyString
+  energy_efficiency: MyString
+  max_energy: MyString
+  energy_level: MyString
+  max_size: MyString
+  age: MyString
+  reproductive_age: MyString
+  life_span: MyString
+  offspring_capacity: MyString
+  parent_1: MyString
+  parent_2: MyString
+  name: MyString
+  predator: MyString
+  sex: MyString

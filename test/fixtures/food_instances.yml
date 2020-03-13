@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  food: one
+  x_coord: MyString
+  y_coord: MyString
+  energy_level: MyString
+
+two:
+  game: two
+  food: two
+  x_coord: MyString
+  y_coord: MyString
+  energy_level: MyString
