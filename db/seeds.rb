@@ -16,6 +16,7 @@ user1 = User.create!({
   email: 'jane@jane.com',
   username: 'jane92',
   password: 'password',
+  password_confirmation: 'password',
   profile_pic: 'random_pic1'
 })
 user2 = User.create!({
@@ -23,6 +24,7 @@ user2 = User.create!({
   email: 'harry@harry.com',
   username: 'theChosenOne',
   password: 'password',
+  password_confirmation: 'password',
   profile_pic: 'random_pic2'
 })
 user3 = User.create!({
@@ -30,6 +32,7 @@ user3 = User.create!({
   email: 'oliver@oliver.com',
   username: 'someMorePlease',
   password: 'password',
+  password_confirmation: 'password',
   profile_pic: 'random_pic3'
 })
 
@@ -130,7 +133,9 @@ Organism.destroy_all
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-color: 'green',
+  color: 'green',
+  perception: rand(100),
+  energy_level: rand(100),
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -153,6 +158,8 @@ end
   size: rand(50),
   speed: rand(30),
   color: 'blue',
+  perception: rand(100),
+  energy_level: rand(100),
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -174,7 +181,9 @@ end
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-color: 'red',
+  color: 'red',
+  perception: rand(100),
+  energy_level: rand(100),
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -196,7 +205,9 @@ end
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-color: 'yellow',
+  color: 'yellow',
+  perception: rand(100),
+  energy_level: rand(100),
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -218,7 +229,9 @@ end
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-color: 'blue',
+  color: 'blue',
+  perception: rand(100),
+  energy_level: rand(100),
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -240,7 +253,9 @@ end
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-color: 'black',
+  color: 'black',
+  perception: rand(100),
+  energy_level: rand(100),
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,

@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_03_15_181135) do
   enable_extension "plpgsql"
 
   create_table "food_instances", force: :cascade do |t|
-    t.integer "game_id", null: false
-    t.integer "food_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "food_id", null: false
     t.float "x_coord"
     t.float "y_coord"
     t.integer "energy_level"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_181135) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.integer "temperature"
     t.string "name"
     t.string "screen_capture"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_181135) do
     t.string "name"
     t.string "email"
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "profile_pic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
