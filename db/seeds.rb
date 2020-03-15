@@ -118,19 +118,19 @@ FoodInstance.create!({
   energy_level: 55
 })
 
-## CELLS
-puts "Re-creating cells ..."
+## Organism
+puts "Re-creating Organisms ..."
 
-Cell.destroy_all
+Organism.destroy_all
 
 5.times do |n|
-  Cell.create!(
+  Organism.create!(
   game_id: game1.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-  colour: 'green',
+color: 'green',
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -146,13 +146,13 @@ Cell.destroy_all
 )
 end
 5.times do |n|
-  Cell.create!(
+  Organism.create!(
   game_id: game1.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-  colour: 'blue',
+  color: 'blue',
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -168,13 +168,13 @@ end
 )
 end
 5.times do |n|
-  Cell.create!(
+  Organism.create!(
   game_id: game2.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-  colour: 'red',
+color: 'red',
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -190,13 +190,13 @@ end
 )
 end
 5.times do |n|
-  Cell.create!(
+  Organism.create!(
   game_id: game2.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-  colour: 'yellow',
+color: 'yellow',
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -212,13 +212,13 @@ end
 )
 end
 5.times do |n|
-  Cell.create!(
+  Organism.create!(
   game_id: game3.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-  colour: 'blue',
+color: 'blue',
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,
@@ -234,13 +234,13 @@ end
 )
 end
 5.times do |n|
-  Cell.create!(
+  Organism.create!(
   game_id: game3.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
   speed: rand(30),
-  colour: 'black',
+color: 'black',
   energy_efficiency: rand(40),
   max_energy: rand(30),
   max_size: 50,

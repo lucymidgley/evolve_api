@@ -1,12 +1,12 @@
-class CreateCells < ActiveRecord::Migration[6.0]
+class CreateOrganisms < ActiveRecord::Migration[6.0]
   def change
-    create_table :cells do |t|
+    create_table :organisms do |t|
       t.references :game, null: false, foreign_key: true
       t.integer :size
       t.float :x_coord
       t.float :y_coord
       t.integer :speed
-      t.string :colour
+      t.string :color
       t.integer :perception
       t.integer :energy_efficiency
       t.integer :max_energy

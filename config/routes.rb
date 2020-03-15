@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :organisms
+  resources :seeds
   resources :cells
   resources :food_instances
   resources :games
