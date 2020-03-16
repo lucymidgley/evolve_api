@@ -1,17 +1,6 @@
 class GamedataController < ApplicationController
   before_action :set_game, only: [:show, :update, :destroy]
 
-  # ID
-  # img - will be created on the react side, and posted to the db
-  # created_at
-  # updated_at
-  # age
-  # name
-  # count the orgs for each game
-  # get the highest scoring org, just loop through each organism
-  # 
-
-
   # GET /gamesdata
   def index
     # @user = User.find(user.id)
@@ -26,18 +15,17 @@ class GamedataController < ApplicationController
     puts @scores.inspect
    
     # @scores is an array that contains the scores of each organism for each game id associated with a user. Loop through each game and add the corresponding scores max index
-    # @scores = @scores.max
-    # @orgs.each {|item,value|
-    # puts item
-    # puts value.inspect}
-    
+
     @gamesdata = Game.find_by_sql("SELECT games.*, count(organisms.id) as orgs FROM games JOIN organisms ON games.id = organisms.game_id 
     where games.user_id = 1 GROUP BY games.id")
     
-    @gamesdata = @gamesdata.map.with_index {|value,index| 
-      value[:high_score] = 2
+    # Active model objects (and arrays?? Maybe?) are not the same as ruby hashes. To treat them as ruby hashes requires using the ".as_json" method to convert.
+    @gamesdata = @gamesdata.as_json
+      
+    @gamesdata.each.with_index {|value,index|
+      value[:high_score] = @scores[index].max
     }
-    
+
     render json: @gamesdata
   end
 
