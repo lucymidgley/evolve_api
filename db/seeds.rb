@@ -63,6 +63,13 @@ game3 = Game.create!({
   screen_capture: 'something new',
   playtime: 100
 })
+game4 = Game.create!({
+  user_id: user2.id,
+  name:  'myPetri4',
+  temperature: 11,
+  screen_capture: 'something else',
+  playtime: 85
+})
 
 ## FOODS
 puts "Re-creating foods ..."
@@ -252,6 +259,54 @@ end
 5.times do |n|
   Organism.create!(
   game_id: game3.id,
+  x_coord: rand(600),
+  y_coord: rand(600),
+  size: rand(50),
+  speed: rand(30),
+  color: 'black',
+  perception: rand(100),
+  energy_level: rand(100),
+  energy_efficiency: rand(40),
+  max_energy: rand(30),
+  max_size: 50,
+  age: rand(100),
+  reproductive_age: 500,
+  life_span: 2500,
+  offspring_capacity: rand(50),
+  parent_1: "",
+  parent_2: "",
+  name: "Unit #{rand(30)}",
+  predator: true,
+  sex: rand(2)
+)
+end
+5.times do |n|
+  Organism.create!(
+  game_id: game4.id,
+  x_coord: rand(600),
+  y_coord: rand(600),
+  size: rand(50),
+  speed: rand(30),
+  color: 'blue',
+  perception: rand(100),
+  energy_level: rand(100),
+  energy_efficiency: rand(40),
+  max_energy: rand(30),
+  max_size: 50,
+  age: rand(100),
+  reproductive_age: 500,
+  life_span: 2500,
+  offspring_capacity: rand(50),
+  parent_1: "",
+  parent_2: "",
+  name: "Unit #{rand(30)}",
+  predator: false,
+  sex: rand(2)
+)
+end
+5.times do |n|
+  Organism.create!(
+  game_id: game4.id,
   x_coord: rand(600),
   y_coord: rand(600),
   size: rand(50),
