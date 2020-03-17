@@ -46,19 +46,22 @@ game1 = Game.create!({
   user_id: user1.id,
   name:  'myPetri',
   temperature: 20,
-  screen_capture: 'something'
+  screen_capture: 'something',
+  playtime: 80
 })
 game2 = Game.create!({
   user_id: user2.id,
   name:  'myPetri2',
   temperature: 10,
-  screen_capture: 'something else'
+  screen_capture: 'something else',
+  playtime: 50
 })
 game3 = Game.create!({
   user_id: user3.id,
   name:  'myPetri3',
   temperature: 5,
-  screen_capture: 'something new'
+  screen_capture: 'something new',
+  playtime: 100
 })
 
 ## FOODS

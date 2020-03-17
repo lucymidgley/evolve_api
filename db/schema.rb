@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_181135) do
     t.integer "temperature"
     t.string "name"
     t.string "screen_capture"
+    t.integer "playtime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_games_on_user_id"

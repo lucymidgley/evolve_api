@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.integer :temperature
       t.string :name
       t.string :screen_capture
+      t.integer :playtime
 
       t.timestamps
     end
