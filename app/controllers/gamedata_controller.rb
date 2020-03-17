@@ -3,8 +3,8 @@ class GamedataController < ApplicationController
 
   # GET /gamesdata
   def index
-    # @user = User.find(user.id)
-    @games = Game.find_by_sql("SELECT games.* FROM games WHERE user_id = 1")
+    @user = User.find(request.headers[:ID])
+    @games = Game.find_by_sql("SELECT games.* FROM games WHERE user_id = #{@user.id}")
     @orgs = @games.map {|game| 
       Organism.find_by_sql("SELECT organisms.* FROM organisms WHERE game_id = #{game.id}")}
     #organisms is an array of arrays (of hashes)
