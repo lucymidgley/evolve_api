@@ -34,12 +34,10 @@ ActiveRecord::Schema.define(version: 2020_03_20_202436) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "game_saves", force: :cascade do |t|
-    t.bigint "game_id", null: false
+  create_table "game_saves", primary_key: "game_id", id: :integer, default: nil, force: :cascade do |t|
     t.text "save_text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_game_saves_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -101,7 +99,6 @@ ActiveRecord::Schema.define(version: 2020_03_20_202436) do
 
   add_foreign_key "food_instances", "foods"
   add_foreign_key "food_instances", "games"
-  add_foreign_key "game_saves", "games"
   add_foreign_key "games", "users"
   add_foreign_key "organisms", "games"
   add_foreign_key "seeds", "games"

@@ -1,3 +1,3 @@
 class GameSave < ApplicationRecord
-  belongs_to :game
+  self.primary_key = 'game_id'
 end
