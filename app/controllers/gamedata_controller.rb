@@ -13,15 +13,15 @@ class GamedataController < ApplicationController
         org.max_size + org.speed*10 + org.perception + org.energy_efficiency + org.max_energy + (org.life_span/100) - (org.reproductive_age / 50) + (org.offspring_capacity * 10)
     }}
     puts @scores.inspect
-   
+
     # @scores is an array that contains the scores of each organism for each game id associated with a user. Loop through each game and add the corresponding scores max index
 
     @gamesdata = Game.find_by_sql("SELECT games.*, count(organisms.id) as orgs FROM games JOIN organisms ON games.id = organisms.game_id 
     where games.user_id = #{@user.id} GROUP BY games.id")
-    
+
     # Active model objects (and arrays?? Maybe?) are not the same as ruby hashes. To treat them as ruby hashes requires using the ".as_json" method to convert.
     @gamesdata = @gamesdata.as_json
-      
+
     @gamesdata.each.with_index {|value,index|
       value[:high_score] = @scores[index].max
     }
