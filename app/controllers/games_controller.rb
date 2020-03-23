@@ -3,7 +3,12 @@ class GamesController < ApplicationController
 
   # GET /games
   def index
-    @games = Game.all
+    if (request.headers[:ID])
+      @user = User.find(request.headers[:ID])
+      @games = Game.find_by_sql("SELECT games.* FROM games WHERE user_id = #{@user.id}")
+    else
+      @games = Game.all
+    end
 
     render json: @games
   end
@@ -26,6 +31,15 @@ class GamesController < ApplicationController
 
   # PATCH/PUT /games/1
   def update
+    
+    puts "game params", game_params.inspect
+    puts "old game", @game.inspect
+    if (@game[:highest_score]) 
+      if (@game[:highest_score] > game_params[:highest_score])
+        game_params[:highest_score] = @game[:highest_score]
+      end
+    end
+  
     if @game.update(game_params)
       render json: @game
     else
@@ -46,6 +60,6 @@ class GamesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit(:user_id, :start_date, :temperature, :saved_at, :name, :screen_capture)
+      params.require(:game).permit(:user_id, :start_date, :temperature, :saved_at, :name, :screen_capture, :highest_score, :num_of_orgs, :playtime)
     end
 end
