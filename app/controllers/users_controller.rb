@@ -18,8 +18,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    my_id = BCrypt::Password.create(@user.id.to_s)
+
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: my_id, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end

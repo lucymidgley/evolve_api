@@ -31,9 +31,6 @@ class GamesController < ApplicationController
 
   # PATCH/PUT /games/1
   def update
-    
-    puts "game params", game_params.inspect
-    puts "old game", @game.inspect
     if (@game[:highest_score]) 
       if (@game[:highest_score] > game_params[:highest_score])
         game_params[:highest_score] = @game[:highest_score]
